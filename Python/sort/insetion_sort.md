@@ -12,7 +12,7 @@
 #### 1.2.3 Example
     
 ##### 插入排序图示
-![insetion_sort](../../images/insertionsort.png)
+![insetion_sort](../images/insertionsort.png)
 
 ##### 语言描述
 

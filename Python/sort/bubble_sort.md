@@ -48,3 +48,7 @@
     1.基本情况：数组大小为 1，返回
     2.做一次正常的冒泡排序。此过程调用递归算法
     3.递归子数组
+
+
+【相关推荐】
++ [5.7. The Bubble Sort¶](http://interactivepython.org/runestone/static/pythonds/SortSearch/TheBubbleSort.html)
