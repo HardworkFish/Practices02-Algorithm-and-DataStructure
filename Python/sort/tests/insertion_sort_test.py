@@ -1,5 +1,5 @@
-from sort.bubble.sources.insertionSort import basic_insertion
-from sort.bubble.sources.insertionSort import recursive_insertion
+from sort.sources.insertionSort import basic_insertion
+from sort.sources.insertionSort import recursive_insertion
 arr = [64, 34, 25, 12, 22, 11, 90]
 arr = basic_insertion(arr)
 print("Basic Insertion Sort: %s" % str(arr))

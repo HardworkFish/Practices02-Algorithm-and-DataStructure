@@ -1,8 +1,8 @@
 import sys
 import time
 sys.path.append('../sources/')
-from sort.bubble.sources.bubbleSort import basic_bubble
-from sort.bubble.sources.bubbleSort import recursive_bubble
+from sort.sources.bubbleSort import basic_bubble
+from sort.sources.bubbleSort import recursive_bubble
 arr = [64,34,25,12,22,11,90]
 arr = basic_bubble(arr)
 print("Basic Sorted array is: %s" % str(arr))

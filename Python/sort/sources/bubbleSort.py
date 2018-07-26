@@ -4,6 +4,9 @@
 
 def basic_bubble(arr):
     n = len(arr)
+    if n<=1:
+        return
+
     for i in range(n): #遍历所有数组元素
         #已经到了最后一个元素位置
         for j in range(0, n-i-1):

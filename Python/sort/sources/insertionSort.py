@@ -1,6 +1,9 @@
 #!/usr/bin/env python
 # Python 实现插入排序
 def basic_insertion(arr):
+    n = len(arr)
+    if n<=1:
+        return
     for i in range(1, len(arr)):
         key = arr[i]
         j = i-1
