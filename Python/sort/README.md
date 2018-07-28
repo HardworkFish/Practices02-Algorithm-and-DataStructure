@@ -11,7 +11,7 @@
 
 ![八大排序性能](../images/performance_comparison.png)
 
-
+---
 **详细实现可查看下面**
 
 （1）8种排序算法说明：
