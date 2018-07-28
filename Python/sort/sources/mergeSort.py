@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-# Python 实现合并排序
+# Python 实现归并排序
 
 def merge(arr,l,m,r):
     n1 = m-l+1
