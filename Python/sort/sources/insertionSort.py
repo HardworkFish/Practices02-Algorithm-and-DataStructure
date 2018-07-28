@@ -26,6 +26,7 @@ def basic_insertion(arr):
         arr[j+1] = key
     return arr
 
+# 递归插入排序
 def recursive_insertion(arr,n):
     # base case
     if n <=1:
