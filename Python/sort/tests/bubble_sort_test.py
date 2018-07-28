@@ -1,6 +1,3 @@
-import sys
-import time
-sys.path.append('../sources/')
 from sort.sources.bubbleSort import basic_bubble
 from sort.sources.bubbleSort import recursive_bubble
 arr = [64,34,25,12,22,11,90]
