@@ -9,5 +9,8 @@ print('Binary Tree: ',end=" ")
 root.PrintTree()
 
 print('\nPreorder Traversal :', root.PreorderTraversal(root))
+print('NoPreorder Traversal :', root.NoPreorderTraversal(root))
 print('Inorder Traversal: ', root.InorderTraversal(root))
+print('NoInorder Traversal: ', root.NoInorderTraversal(root))
 print('Postorder Traversal: ', root.PostorderTraversal(root))
+print('No Postorder Traversal: ', root.NoPostorderTraversal(root))

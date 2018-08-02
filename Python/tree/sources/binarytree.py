@@ -43,14 +43,42 @@ class Node:
             res = res + self.PreorderTraversal(root.right)
         return res
 
+# 二叉树非递归先序遍历
+    def NoPreorderTraversal(self, root):
+        res = []
+        stack = []
+        while root or stack:
+            while root:
+                res.append(root.data)
+                stack.append(root)
+                root = root.left
+            if stack:
+                t = stack.pop()
+                root = t.right
+        return res
+
 #二叉树的中序遍历
 # Left->Root->Right
     def InorderTraversal(self, root):
         res = []
         if root:
-            res = self.InorderTraversal(root.left)
+            res = res + self.InorderTraversal(root.left)
             res.append(root.data)
             res = res + self.InorderTraversal(root.right)
+        return res
+
+#二叉树非递归中序遍历
+    def NoInorderTraversal(self, root):
+        res = []
+        stack = []
+        while root or stack:
+            while root:
+                stack.append(root)
+                root = root.left
+            if stack:
+                t = stack.pop()
+                res.append(t.data)
+                root = t.right
         return res
 
 #二叉树的后序遍历
@@ -58,7 +86,21 @@ class Node:
     def PostorderTraversal(self, root):
         res = []
         if root:
-            res = self.PostorderTraversal(root.left)
+            res = res + self.PostorderTraversal(root.left)
             res = res + self.PostorderTraversal(root.right)
-            res.append(self.data)
+            res.append(root.data)
         return res
+
+# 非递归的后序遍历
+    def NoPostorderTraversal(self, root):
+        res = []
+        stack = []
+        while root or stack:
+            while root:
+                res.append(root.data)
+                stack.append(root)
+                root = root.right
+            if stack:
+                top = stack.pop()
+                root = top.left
+        return res[::-1]
