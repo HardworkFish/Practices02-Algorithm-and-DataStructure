@@ -1,50 +1,52 @@
 #!/usr/bin/env python
 # Python 实现二叉树
+# 2018-11-19 22:34
 
-#创建根节点
+
+# 创建根节点
 class Node:
     def __init__(self, data):
         self.left = None
         self.right = None
         self.data = data
-# 插入节点
-    def insert(self, data):
 
+    # 插入节点
+    def insert(self, node):
         if self.data:
-            if data < self.data:
+            if node.data < self.data:
                 if self.left is None:
-                    self.left = Node(data)
+                    self.left = node
                 else:
-                    self.left.insert(data)
-            elif data > self.data:
+                    self.left.insert(node)
+            elif node.data > self.data:
                 if self.right is None:
-                    self.right = Node(data)
+                    self.right = node
                 else:
-                    self.right.insert(data)
+                    self.right.insert(node)
         else:
-            self.data = data
+            self.data = node.data
 
-# 打印二叉树
-    def PrintTree(self):
+    # 打印二叉树
+    def print_tree(self):
         if self.left:
-            self.left.PrintTree()
-        print(self.data, end = " ")
+            self.left.print_tree()
+        print(self.data, end=" ")
         if self.right:
-            self.right.PrintTree()
+            self.right.print_tree()
 
-
-#二叉树的前序遍历
-# Root->Left-->Right
-    def PreorderTraversal(self, root):
+    # 二叉树的前序遍历
+    # Root->Left-->Right
+    def preorder_traversal(self, root):
         res = []
         if root:
             res.append(root.data)
-            res = res + self.PreorderTraversal(root.left)
-            res = res + self.PreorderTraversal(root.right)
+            res = res + self.preorder_traversal(root.left)
+            res = res + self.preorder_traversal(root.right)
         return res
 
-# 二叉树非递归先序遍历
-    def NoPreorderTraversal(self, root):
+    # 二叉树非递归先序遍历
+    @staticmethod
+    def no_preorder_traversal(root):
         res = []
         stack = []
         while root or stack:
@@ -57,18 +59,19 @@ class Node:
                 root = t.right
         return res
 
-#二叉树的中序遍历
-# Left->Root->Right
-    def InorderTraversal(self, root):
+    # 二叉树的中序遍历
+    # Left->Root->Right
+    def inorder_traversal(self, root):
         res = []
         if root:
-            res = res + self.InorderTraversal(root.left)
+            res = res + self.inorder_traversal(root.left)
             res.append(root.data)
-            res = res + self.InorderTraversal(root.right)
+            res = res + self.inorder_traversal(root.right)
         return res
 
-#二叉树非递归中序遍历
-    def NoInorderTraversal(self, root):
+    # 二叉树非递归中序遍历
+    @staticmethod
+    def no_inorder_traversal(root):
         res = []
         stack = []
         while root or stack:
@@ -81,18 +84,19 @@ class Node:
                 root = t.right
         return res
 
-#二叉树的后序遍历
-# Left->Right->Root
-    def PostorderTraversal(self, root):
+    # 二叉树的后序遍历
+    # Left->Right->Root
+    def postorder_traversal(self, root):
         res = []
         if root:
-            res = res + self.PostorderTraversal(root.left)
-            res = res + self.PostorderTraversal(root.right)
+            res = res + self.postorder_traversal(root.left)
+            res = res + self.postorder_traversal(root.right)
             res.append(root.data)
         return res
 
-# 非递归的后序遍历
-    def NoPostorderTraversal(self, root):
+    # 非递归的后序遍历
+    @staticmethod
+    def no_postorder_traversal(root):
         res = []
         stack = []
         while root or stack:
